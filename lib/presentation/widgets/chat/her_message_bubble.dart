@@ -49,6 +49,19 @@ class _ImageBubble extends StatelessWidget {
           height: 150,
           width: deviceSize.width * 0.7,
           fit: BoxFit.cover,
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+
+            return Container(
+              height: 150,
+              width: deviceSize.width * 0.7,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 5,
+              ),
+              child: const Text('Mi amor 💕 está enviando un mensaje'),
+            );
+          },
         ),
       ),
     );
